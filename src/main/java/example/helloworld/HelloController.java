@@ -6,9 +6,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 class HelloController {
 
+	private final HelloMessageProvider messageProvider;
+
+	HelloController(HelloMessageProvider messageProvider) {
+		this.messageProvider = messageProvider;
+	}
+
 	@GetMapping("/hello")
 	public String hello() {
-		return "Hello World!";
+		return this.messageProvider.getMessage();
 	}
 
 }
