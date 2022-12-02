@@ -15,6 +15,7 @@ public class HelloWorldApplication {
 		SpringApplication.run(HelloWorldApplication.class, args);
 	}
 
+	@Configuration
 	static class HelloConfiguration {
 
 		@Bean
