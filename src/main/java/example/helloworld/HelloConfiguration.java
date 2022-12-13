@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 class HelloConfiguration {
 
 	@Bean
-	HelloMessageProvider messageProvider() {
-		return new HelloMessageProvider();
+	HelloMessageProvider messageProvider(HelloNameProvider nameProvider) {
+		return new HelloMessageProvider(nameProvider);
 	}
 
 }
